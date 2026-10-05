@@ -58,6 +58,14 @@ async def start(message: Message):
         "и я передам её мастеру."
     )
 
+@dp.message(Command("help"))
+async def help_command(message: Message):
+    await message.answer(
+        "Доступные команды:\n"
+        "/start — создать заявку\n"
+        "/help — помощь"
+    )
+
 
 @dp.message(F.text)
 async def receive_problem(message: Message):
